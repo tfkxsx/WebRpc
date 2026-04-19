@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "web-rpc-sdk"
+version = "0.1.0"
+description = "A lightweight Python SDK for calling browser-side JavaScript methods through a WebSocket relay."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-only" }
+authors = [
+  { name = "tf" }
+]
+keywords = ["websocket", "rpc", "sdk", "browser", "relay"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+dependencies = [
+  "websockets>=16.0"
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/web-rpc-sdk/"
+
+[project.scripts]
+web-rpc-server = "web_rpc_sdk.cli:run_server"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["web_rpc_sdk*"]
